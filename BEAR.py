@@ -1,0 +1,117 @@
+from flask import Flask, render_template , request
+from flask import jsonify
+import json
+from json import dumps
+from flask_cors import CORS, cross_origin
+from waitress import serve
+import random
+
+
+
+import pickle
+import numpy as np
+import nltk
+from nltk import WordNetLemmatizer
+from tensorflow.keras.models import load_model
+
+import tensorflow as tf
+
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Force TF to use only the CPU
+
+configuration = tf.compat.v1.ConfigProto()
+configuration.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=configuration)
+
+lemmatizer = WordNetLemmatizer()
+intents = json.loads(open('intents.json').read())
+
+words = pickle.load(open('words.pkl', 'rb'))
+classes = pickle.load(open('classes.pkl', 'rb'))
+model =  load_model('BEAR_model.h5')
+
+
+app = Flask(__name__)
+app.static_folder = 'static'
+
+CORS(app)
+cors = CORS(app, resources={
+    r"/*":{
+        "origins": "*",
+        "methods": ["GET", "OPTIONS"]}})
+
+
+#API ROOT FOLDER
+@app.route("/")
+def home():
+    userText = request.args.get('msg')
+    return render_template("index.html")
+
+@app.route("/BEAR", methods=['GET'])
+def Dscription():
+    if request.method == 'GET':
+        message = request.args.get('msg')
+        def clean_sentense(sentence):
+            sentence_words = nltk.word_tokenize(sentence)
+            sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
+            return sentence_words
+
+        def bag_of_words(sentence):
+            sentence_words = clean_sentense(sentence)
+            bag = [0] * len(words)
+            for w in sentence_words:
+                for i, word in enumerate(words):
+                    if word == w:
+                        bag[i] = 1
+            return np.array(bag)
+
+        def predict_class(sentence):
+            bow = bag_of_words(sentence)
+            res = model.predict(np.array([bow]))[0]
+            ERROR_THRESHOLD = 0.25
+            result = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+            result.sort(key=lambda x: x[1], reverse=True)
+            return_list = []
+
+            for r in result:
+                return_list.append({'intent': classes[r[0]], 'probability':str(r[1])})
+                print(return_list)
+            return return_list
+
+
+        def get_response(intents_list, intents_json):
+            tag = intents_list[0]['intent']
+            list_of_intents = intents_json['intents']
+            for i in list_of_intents:
+                if i['tag'] == tag:
+                    result = random.choice(i['responses'])
+                    break
+            return result
+
+        print("BEAR is running")
+
+        message = request.args.get('msg')
+        ints = predict_class(message)
+        res = get_response(ints, intents)
+        print(res)
+
+        BearRes = res
+        
+
+        return jsonify({'Bear Response': BearRes})
+
+    
+
+
+
+#API SETTINGS
+if __name__ == "__main__":
+    print("\n","\n")
+    print("  ██████╗    ███████╗    █████╗    ██████╗      █████╗ ██╗")
+    print("  ██╔══██╗   ██╔════╝   ██╔══██╗   ██╔══██╗    ██╔══██╗██║")
+    print("  ██████╔╝   █████╗     ███████║   ██████╔╝    ███████║██║")
+    print("  ██╔══██╗   ██╔══╝     ██╔══██║   ██╔══██╗    ██╔══██║██║")
+    print("  ██████╔╝██╗███████╗██╗██║  ██║██╗██║  ██║    ██║  ██║██║")
+    print("  ╚═════╝ ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝ ver.1.0.0")
+    print("\n","\n")
+    app.run(host='0.0.0.0' , port=5000) 

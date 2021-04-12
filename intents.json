@@ -1,0 +1,102 @@
+{"intents": [
+    {"tag": "greetings",
+    "patterns": ["hello", "hi", "hey", "hows it going", "whats up"],
+    "responses": ["hello", "hey", "how can I help"]
+},
+    {"tag": "goodbye",
+    "patterns": ["cya", "see you later", "ltr", "bye", "goodbye", "see ya", "ciao"],
+    "responses": ["ltr", "bye", "talk to you later"]
+},
+    {"tag": "topics",
+    "patterns": ["what do you know", "what can you help me with", "topics"],
+    "responses": ["I know about basic math, the solar system, and norse gods", "here is what I can teach you about, math, the solar system, and norse gods", "I can ehlp with these topics math, the solar system, and norse gods "]
+},
+    {"tag": "identity",
+    "patterns": ["who are you", "what are you", "what do you do"],
+    "responses": ["I am BEAR an AI personal Tutor", "I am your personal tutor BEAR"]
+},
+{"tag": "math",
+    "patterns": ["tell me more about math", "teach me about math", "what do you know about math"],
+    "responses": ["I can teach you about addition, subtraction, division and multiplication", "I can help explain addition, subtraction, division and multiplication "]
+    },
+{"tag": "addtion",
+"patterns": ["tell me more about addiction", "explain addition", "how do I add"],
+"responses": ["The addition is taking two or more numbers and adding them together, that is, it is the total sum of 2 or more numbers."]
+},
+{"tag": "subtraction",
+"patterns": ["tell me more about subtraction", "explain subtraction", "how do I substract"],
+"responses": ["In math, to subtract means to take away from a group or a number of things. When we subtract, the number of things in the group reduce or become less."]
+},
+{"tag": "division",
+"patterns": ["tell me more about division", "explain division", "how do I divide"],
+"responses": ["The division is a method of distributing a group of things into equal parts. It is one of the four basic operations of arithmetic, which gives a fair result of sharing. The division is an operation inverse of multiplication. If 3 groups of 4 make 12 in multiplication; 12 divided into 3 equal groups give 4 in each group in division."]
+},
+{"tag": "multiplication",
+"patterns": ["tell me more about multiplication", "explain multiplication", "how do I multiply"],
+"responses": ["Multiplication, one of the four basic operations of arithmetic, gives the result of combining groups of equal sizes. Here each group has 3 ice creams, and there are two such groups. So, there are 2 times 3 or 3 + 3 or 6 ice creams in total. In other words, multiplication is repeated addition."]
+},
+{"tag": "solar system",
+"patterns": ["tell me about the solar system", "explain the solar system", "what planets are in our solar system"],
+"responses": ["the solar system is contains 8 planets and one star. listed in order they are, The sun, Mercury, Venus, Earth, Mars, jupyter, Saturn, Uranus, and Neptune. which planet would you like to learn more about ?"]
+},
+{"tag": "Sun",
+"patterns": ["tell me about the sun", "the sun", "teach me about the sun"],
+"responses": ["The Sun is the Solar System's star and by far its most massive component. Its large mass (332,900 Earth masses), which comprises 99.86% of all the mass in the Solar System, produces temperatures and densities in its core high enough to sustain nuclear fusion of hydrogen into helium, making it a main-sequence star.[59] This releases an enormous amount of energy, mostly radiated into space as electromagnetic radiation peaking in visible light. The Sun is a G2-type main-sequence star. Hotter main-sequence stars are more luminous. The Sun's temperature is intermediate between that of the hottest stars and that of the coolest stars. Stars brighter and hotter than the Sun are rare, whereas substantially dimmer and cooler stars, known as red dwarfs, make up 85% of the stars in the Milky Way. The Sun is a population I star; it has a higher abundance of elements heavier than hydrogen and helium (metals in astronomical parlance) than the older population II stars. Elements heavier than hydrogen and helium were formed in the cores of ancient and exploding stars, so the first generation of stars had to die before the universe could be enriched with these atoms. The oldest stars contain few metals, whereas stars born later have more. This high metallicity is thought to have been crucial to the Sun's development of a planetary system because the planets form from the accretion of metals."]
+},
+{"tag": "Mercury",
+"patterns": ["tell me about Mercury", "Mercury", "teach me about Mercury"],
+"responses": ["Mercury (0.4 AU from the Sun) is the closest planet to the Sun and on average, all seven other planets. The smallest planet in the Solar System (0.055 M⊕), Mercury has no natural satellites. Besides impact craters, its only known geological features are lobed ridges or rupes that were probably produced by a period of contraction early in its history.[80] Mercury's very tenuous atmosphere consists of atoms blasted off its surface by the solar wind. Its relatively large iron core and thin mantle have not yet been adequately explained. Hypotheses include that its outer layers were stripped off by a giant impact, or that it was prevented from fully accreting by the young Sun's energy."]
+},
+{"tag": "Venus",
+"patterns": ["tell me about Venus", "Venus", "teach me about Venus"],
+"responses": ["Venus (0.7 AU from the Sun) is close in size to Earth (0.815 M⊕) and, like Earth, has a thick silicate mantle around an iron core, a substantial atmosphere, and evidence of internal geological activity. It is much drier than Earth, and its atmosphere is ninety times as dense. Venus has no natural satellites. It is the hottest planet, with surface temperatures over 400 °C (752 °F), most likely due to the amount of greenhouse gases in the atmosphere. No definitive evidence of current geological activity has been detected on Venus, but it has no magnetic field that would prevent depletion of its substantial atmosphere, which suggests that its atmosphere is being replenished by volcanic eruptions."]
+},
+{"tag": "Mars",
+"patterns": ["tell me about Mars", "Mars", "teach me about Mars"],
+"responses": ["Mars (1.5 AU from the Sun) is smaller than Earth and Venus (0.107 M⊕). It has an atmosphere of mostly carbon dioxide with a surface pressure of 6.1 millibars (roughly 0.6% of that of Earth). Its surface, peppered with vast volcanoes, such as Olympus Mons, and rift valleys, such as Valles Marineris, shows geological activity that may have persisted until as recently as 2 million years ago.[89] Its red colour comes from iron oxide (rust) in its soil. Mars has two tiny natural satellites (Deimos and Phobos) thought to be either captured asteroids, or ejected debris from a massive impact early in Mars's history."]
+},
+{"tag": "Earth",
+"patterns": ["tell me about Earth", "Earth", "teach me about Earth"],
+"responses": ["Earth (1 AU from the Sun) is the largest and densest of the inner planets, the only one known to have current geological activity, and the only place where life is known to exist. Its liquid hydrosphere is unique among the terrestrial planets, and it is the only planet where plate tectonics has been observed. Earth's atmosphere is radically different from those of the other planets, having been altered by the presence of life to contain 21% free oxygen. It has one natural satellite, the Moon, the only large satellite of a terrestrial planet in the Solar System."]
+},
+{"tag": "Jupyter",
+"patterns": ["tell me about Jupyter", "jupyter", "teach me about jupyter"],
+"responses": ["Jupiter (5.2 AU), at 318 M⊕, is 2.5 times the mass of all the other planets put together. It is composed largely of hydrogen and helium. Jupiter's strong internal heat creates semi-permanent features in its atmosphere, such as cloud bands and the Great Red Spot. Jupiter has 79 known satellites. The four largest, Ganymede, Callisto, Io, and Europa, show similarities to the terrestrial planets, such as volcanism and internal heating. Ganymede, the largest satellite in the Solar System, is larger than Mercury."]
+},
+{"tag": "Saturn",
+"patterns": ["tell me about Saturn", "Saturn", "teach me about Saturn"],
+"responses": ["Saturn (9.5 AU), distinguished by its extensive ring system, has several similarities to Jupiter, such as its atmospheric composition and magnetosphere. Although Saturn has 60% of Jupiter's volume, it is less than a third as massive, at 95 M⊕. Saturn is the only planet of the Solar System that is less dense than water. The rings of Saturn are made up of small ice and rock particles. Saturn has 82 confirmed satellites composed largely of ice. Two of these, Titan and Enceladus, show signs of geological activity.[106] Titan, the second-largest moon in the Solar System, is larger than Mercury and the only satellite in the Solar System with a substantial atmosphere."]
+},
+{"tag": "Uranus",
+"patterns": ["tell me about Uranus", "Uranus", "teach me about Uranus"],
+"responses": ["Uranus (19.2 AU), at 14 M⊕, is the lightest of the outer planets. Uniquely among the planets, it orbits the Sun on its side; its axial tilt is over ninety degrees to the ecliptic. It has a much colder core than the other giant planets and radiates very little heat into space. Uranus has 27 known satellites, the largest ones being Titania, Oberon, Umbriel, Ariel, and Miranda."]
+},
+{"tag": "Neptune",
+"patterns": ["tell me about Neptune", "Neptune", "teach me about Neptune"],
+"responses": ["Neptune (30.1 AU), though slightly smaller than Uranus, is more massive (17 M⊕) and hence more dense. It radiates more internal heat, but not as much as Jupiter or Saturn. Neptune has 14 known satellites. The largest, Triton, is geologically active, with geysers of liquid nitrogen. Triton is the only large satellite with a retrograde orbit. Neptune is accompanied in its orbit by several minor planets, termed Neptune trojans, that are in 1:1 resonance with it."]
+},
+{"tag": "norse mythology",
+"patterns": ["what do you know about norse mythology", "teach me about norse mythology", "norse mythology"],
+"responses": ["I know about Loki, Odin, Jormungandr, thor, freyja, and Balder", "I can teach you about Loki, Odin, Jormungandr, thor, freyja, and Balder"]
+},
+{"tag": "Loki",
+"patterns": ["tell me about loki", "loki", "teach me about loki"],
+"responses": ["The sly, trickster of the Norse gods. Son of two giants. Also known as the Sly One, the Trickster, the Shape Changer and the Sky Traveller. Becomes increasingly more evil. He is responsible for the death of Balder. Bound until Ragnarok"]
+},
+{"tag": "Odin",
+"patterns": ["tell me about odin", "odin", "teach me about odin"],
+"responses": ["King of the Norse Gods, God of poetry, battle and death. Chief god of the Aesir. Also known as the all-father, the terrible one, one-eyed and father of battle"]
+},
+{"tag": "thor",
+"patterns": ["tell me about thor", "thor", "teach me about thor"],
+"responses": ["God of Sky, thunder and fertility. Associated with law and order in Asgard and guardian of the Norse gods. Son of Odin and Earth and husband of Sif. Also known as the thunder god and charioteer"]
+},
+{"tag": "freyja",
+"patterns": ["tell me about freyja", "freyja", "teach me about freyja"],
+"responses": [" Main goddess of the Vanir (fertility gods). Daughter of Njord and sister of Freyr."]
+},
+{"tag": "Balder",
+"patterns": ["tell me about balder", "balder", "teach me about balder"],
+"responses": ["Son of Odin and Frigg. Known as a gentle and wise god. Killed accidentally by his brother Hod. Will return after Ragnarok."]
+}
+]}
