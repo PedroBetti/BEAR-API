@@ -4,5 +4,6 @@ Currently this is not being used or hosted due to the large size of isntalling a
 deployed on Amazon Web Services.
 
 If you want to run this on your local host you need to install the requirements.txt file, then make sure you have nltk, tensorflow2, and ktrain.
+Once everything has been installed you can run BEAR.py.
 
 Once it is running on your local host you can call it as an API.
